@@ -1,10 +1,11 @@
-FROM php:7.3-fpm
+FROM php:7.4-fpm
 
 LABEL maintainer="Christopher David Heanan"
 
 RUN apt-get update && apt-get install -y \
     build-essential \
     libicu-dev \
+    libonig-dev \
     zip \
     locales \
     libcurl4-gnutls-dev \

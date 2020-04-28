@@ -1,9 +1,10 @@
-FROM php:7.3-cli-alpine
+FROM php:7.4-cli-alpine
 
 LABEL maintainer="Christopher David Heanan"
 
 RUN apk add --update \
     icu-libs \
+    oniguruma-dev \
     zip \
     git \
     curl \
