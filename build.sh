@@ -1,8 +1,6 @@
 #!/bin/bash
 
-[ "$#" -eq 1 ] || { echo "Please provide a PHP version tag"; exit 1; }
-
-PHP=$1
+PHP=7.4
 
 docker build \
     -t cheanan/php:$PHP \

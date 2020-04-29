@@ -16,6 +16,7 @@ From the offical php-fpm image
 + intl
 + pcntl
 + exif
++ zip
 
 ### Tags
 

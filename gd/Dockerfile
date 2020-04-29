@@ -6,7 +6,9 @@ RUN apt-get update && apt-get install -y \
     build-essential \
     libicu-dev \
     libonig-dev \
+    libzip-dev \
     zip \
+    unzip \
     locales \
     libcurl4-gnutls-dev \
     curl \
@@ -17,7 +19,7 @@ RUN apt-get update && apt-get install -y \
     libpng-dev
 
 RUN docker-php-ext-configure gd --enable-gd --with-freetype --with-jpeg --with-webp
-RUN docker-php-ext-install pdo_mysql mbstring curl intl pcntl exif gd
+RUN docker-php-ext-install pdo_mysql mbstring zip exif curl intl pcntl gd
 
 RUN apt autoclean \
     && apt clean \

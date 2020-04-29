@@ -3,18 +3,18 @@ FROM php:7.4-cli-alpine
 LABEL maintainer="Christopher David Heanan"
 
 RUN apk add --update \
-    icu-libs \
-    oniguruma-dev \
-    zip \
     git \
+    icu-libs \
+    icu-dev \
+    oniguruma-dev \
+    openssl-dev \
     curl \
     curl-dev \
-    icu-dev \
-    openssl-dev
+    libzip-dev
 
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
-RUN docker-php-ext-install mbstring curl intl
+RUN docker-php-ext-install mbstring curl intl zip
 
 RUN rm -rf /var/cache/apk/*
 
